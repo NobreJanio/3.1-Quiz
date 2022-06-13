@@ -135,11 +135,11 @@ function verificarSeAcertou(nQuestao, resposta) {
 
     if(respostaEscolhida == certa) {
         console.log("Acertou")
-        respostaEsta.textContent = "Correta 😊"
+        //respostaEsta.textContent = "Correta 😊"
         pontos += 10 // pontos = pontos + 10
     } else {
         console.log("Errou!")
-        respostaEsta.textContent = "Errada 😢"
+        //respostaEsta.textContent = "Errada 😢"
     }
 
     // atualizar placar
@@ -161,4 +161,32 @@ function verificarSeAcertou(nQuestao, resposta) {
         }
     }, 250)
     desbloquearAlternativas()
+}
+
+function fimDoJogo() {
+    instrucoes.textContent = "Fim de Jogo!"
+    numQuestao.textContent = ""
+
+    let pont = ''
+    pontos == 0 ? pont = 'ponto' : pont = 'pontos'
+
+    pergunta.textContent   = "Você conseguiu " + pontos + " " + pont
+
+    aviso.textContent = "Você conseguiu " + pontos + " " + pont
+
+    a.textContent = ""
+    b.textContent = ""
+    c.textContent = ""
+
+    a.setAttribute('value', '0')
+    b.setAttribute('value', '0')
+    c.setAttribute('value', '0')
+
+    // OCULTAR O ARTICLE DA QUESTAO
+    articleQuestoes.style.display = 'none'
+
+    setTimeout(function() {
+        pontos = 0 // zerar placar
+        location.reload();
+    }, 2000)
 }
