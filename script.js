@@ -121,3 +121,24 @@ function desbloquearAlternativas() {
     b.classList.remove('bloqueado')
     c.classList.remove('bloqueado')
 }
+
+function verificarSeAcertou(nQuestao, resposta) {
+
+    let numeroDaQuestao = nQuestao.value
+    console.log("Questão " + numeroDaQuestao)
+
+    let respostaEscolhida = resposta.textContent
+    console.log("RespU " + respostaEscolhida)
+
+    let certa = questoes[numeroDaQuestao].correta
+    console.log("RespC " + certa)
+
+    if(respostaEscolhida == certa) {
+        console.log("Acertou")
+        respostaEsta.textContent = "Correta 😊"
+        pontos += 10 // pontos = pontos + 10
+    } else {
+        console.log("Errou!")
+        respostaEsta.textContent = "Errada 😢"
+    }
+}
