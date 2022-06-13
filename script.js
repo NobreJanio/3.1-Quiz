@@ -96,3 +96,16 @@ c.textContent = q1.alternativaC
 a.setAttribute('value', '1A')
 b.setAttribute('value', '1B')
 c.setAttribute('value', '1C')
+
+// PARA MONTAR AS PROXIMAS QUESTOES
+function proximaQuestao(nQuestao) {
+    numero.textContent = nQuestao
+    numQuestao.textContent = questoes[nQuestao].numQuestao
+    pergunta.textContent   = questoes[nQuestao].pergunta
+    a.textContent = questoes[nQuestao].alternativaA
+    b.textContent = questoes[nQuestao].alternativaB
+    c.textContent = questoes[nQuestao].alternativaC
+    a.setAttribute('value', nQuestao+'A')
+    b.setAttribute('value', nQuestao+'B')
+    c.setAttribute('value', nQuestao+'C')
+}
