@@ -72,3 +72,27 @@ const q5 = {
     alternativaC : "América",
     correta      : "América",
 }
+
+// CONSTANTE COM UM ARRAY DE OBJETOS COM TODAS AS QUESTOES
+const questoes = [q0, q1, q2, q3, q4, q5]
+
+let numero = document.querySelector('#numero')
+let total  = document.querySelector('#total')
+
+numero.textContent = q1.numQuestao
+
+let totalDeQuestoes = (questoes.length)-1
+console.log("Total de questões " + totalDeQuestoes)
+total.textContent = totalDeQuestoes
+
+// MONTAR A 1a QUESTAO COMPLETA, para iniciar o Quiz
+numQuestao.textContent = q1.numQuestao
+pergunta.textContent   = q1.pergunta
+a.textContent = q1.alternativaA
+b.textContent = q1.alternativaB
+c.textContent = q1.alternativaC
+
+// CONFIGURAR O VALUE INICIAL DA 1a QUESTAO COMPLETA
+a.setAttribute('value', '1A')
+b.setAttribute('value', '1B')
+c.setAttribute('value', '1C')
