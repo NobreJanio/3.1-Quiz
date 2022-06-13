@@ -141,4 +141,24 @@ function verificarSeAcertou(nQuestao, resposta) {
         console.log("Errou!")
         respostaEsta.textContent = "Errada 😢"
     }
+
+    // atualizar placar
+    placar = pontos
+    instrucoes.textContent = "Pontos " + placar
+
+    // bloquear a escolha de opcoes
+    bloquearAlternativas()
+
+    setTimeout(function() {
+        //respostaEsta.textContent = '...'
+        proxima = numeroDaQuestao+1
+
+        if(proxima > totalDeQuestoes) {
+            console.log('Fim do Jogo!')
+            fimDoJogo()
+        } else {
+            proximaQuestao(proxima)
+        }
+    }, 250)
+    desbloquearAlternativas()
 }
