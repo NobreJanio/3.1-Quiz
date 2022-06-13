@@ -109,3 +109,15 @@ function proximaQuestao(nQuestao) {
     b.setAttribute('value', nQuestao+'B')
     c.setAttribute('value', nQuestao+'C')
 }
+
+function bloquearAlternativas() {
+    a.classList.add('bloqueado')
+    b.classList.add('bloqueado')
+    c.classList.add('bloqueado')
+}
+
+function desbloquearAlternativas() {
+    a.classList.remove('bloqueado')
+    b.classList.remove('bloqueado')
+    c.classList.remove('bloqueado')
+}
