@@ -1,65 +1,61 @@
-<!DOCTYPE html>
+
 <html lang="pt-br">
 <head>
     
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quiz</title>
+    <title>JJ Quiz</title>
     <!-- CSS externo -->
-    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="./style.css" />
 </head>
 <body>
-
     <main class="tela-principal">
+        <section class="conteudos">
 
-        <section class='conteudos'>
-
-            <h1>JJ Quiz</h1>
-
-            <article class='centro' id='instrucoes'>
-                Leia a questão e clique na resposta correta
+            <h1 id='titulo'>App</h1>
+            
+            <article id='instrucoes' class='placar'>
+                Leia a questão e depois clique na resposta
             </article>
 
-            <article class='questoes'>
-                
-                <header class='questao'>
-                    <span id='numQuestao'></span>
-                    <h2 id='pergunta'></h2>
+            <article class="questao">
+
+                <header class="topoQuestao">
+                    <span id='nQuestao'>?</span>
+                    <h2 id='pergunta'>???</h2>
                 </header>
-                <!--
-                <figure class='imagemDaQuestao'>
-                    <img src="images/quiz/rosa_dos_ventos.png" alt="Imagem da questao" width="200px"/>
-                </figure>
-                -->
-                <div class='corpo'>
-                    <ol type='A' id='alternativas'>
-                        <li id='a' value='1A' class='respostas' onClick='verificarSeAcertou(this, this)'></li>
-                        <li id='b' value='1B' class='respostas' onClick='verificarSeAcertou(this, this)'></li>
-                        <li id='c' value='1C' class='respostas' onClick='verificarSeAcertou(this, this)'></li>
-                        <li id='d' value='1D' class='respostas' onClick='verificarSeAcertou(this, this)'></li>
+
+                <div class='corpoQuestao'>
+                    <ol class='alternativas'>
+                        <li id="a" value="1A" class='letras' onClick='verificarSeAcertou(this, this)'></li>
+                        <li id="b" value="1B" class='letras' onClick='verificarSeAcertou(this, this)'></li>
+                        <li id="c" value="1C" class='letras' onClick='verificarSeAcertou(this, this)'></li>
+                        <li id="d" value="1D" class='letras' onClick='verificarSeAcertou(this, this)'></li>
                     </ol>
                 </div>
-            </article>
-            
-            <article id='aviso' class='centro'>
-                <input type="range" value='1' min='1' max='10' step='1'
-                name="progresso" id="progresso" disabled
-                /> <br>
-                <span id='numero'></span> de <span id='total'></span>
-            </article>
-        
-            <footer id='autoria' class='centro'>Desenvolvido por Jânio Júnior &copy; 2022</footer>
 
+                <footer id='aviso' class='rodapeQuestao centro'>
+                        <span id='numero'></span>
+                        de <span id='total'></span>
+                </footer>
+
+            </article>
+
+            <footer class='centro' id='autoria'>
+                Desenvolvido por Jânio Júnior &copy; 2022
+            </footer>
+        
         </section>
 
     </main>
-<audio preload src="./Audio/positive.mp3" id='somAcerto'></audio>
-<audio preload src="./Audio/negative.mp3" id='somErro'></audio>
-<audio preload src="./Audio/aplausos.mp3" id='somAplausos'></audio>
 
-<!-- JS externo -->
-<script src="/script.js"></script>
+    <audio src="./Audio/positive.mp3" id='somAcerto'></audio>
+    <audio src="./Audio/negative.mp3" id='somErro'></audio>
+    <audio src="./Audio/aplausos.mp3" id='somAplausos'></audio>
 
+    <input type="hidden" id='correct' name='correct' value='' />
+    <!-- JS EXTERNO -->
+    <script src="./script.js"></script>
 </body>
 </html>
